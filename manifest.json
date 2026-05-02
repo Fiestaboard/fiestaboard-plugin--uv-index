@@ -1,0 +1,88 @@
+{
+  "id": "uv_index",
+  "name": "UV Index",
+  "version": "0.1.0",
+  "description": "Display the current UV index and sun protection advice using Open-Meteo.",
+  "author": "FiestaBoard Team",
+  "icon": "sun-dim",
+  "category": "weather",
+  "repository": "https://github.com/Fiestaboard/fiestaboard-plugin--uv-index",
+  "documentation": "README.md",
+  "min_refresh_seconds": 1800,
+  "settings_schema": {
+    "type": "object",
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "title": "Enabled",
+        "default": false
+      },
+      "latitude": {
+        "type": "number",
+        "title": "Latitude",
+        "description": "Location latitude (decimal degrees).",
+        "default": 40.7128,
+        "minimum": -90,
+        "maximum": 90
+      },
+      "longitude": {
+        "type": "number",
+        "title": "Longitude",
+        "description": "Location longitude (decimal degrees).",
+        "default": -74.006,
+        "minimum": -180,
+        "maximum": 180
+      },
+      "refresh_seconds": {
+        "type": "integer",
+        "title": "Refresh Interval (seconds)",
+        "description": "How often to refresh UV data.",
+        "default": 1800,
+        "minimum": 900
+      }
+    },
+    "required": []
+  },
+  "variables": {
+    "groups": {
+      "uv": {
+        "label": "UV Index"
+      },
+      "advice": {
+        "label": "Advice"
+      }
+    },
+    "simple": {
+      "uv_index": {
+        "description": "Current UV index value",
+        "type": "number",
+        "max_length": 5,
+        "group": "uv",
+        "example": "7.2"
+      },
+      "risk_level": {
+        "description": "UV risk level (Low/Moderate/High/Very High/Extreme)",
+        "type": "string",
+        "max_length": 12,
+        "group": "uv",
+        "example": "High"
+      },
+      "protection": {
+        "description": "Recommended protection (e.g. SPF 30+)",
+        "type": "string",
+        "max_length": 20,
+        "group": "advice",
+        "example": "SPF 30+, seek shade"
+      }
+    }
+  },
+  "screenshots": [
+    {
+      "src": "docs/board-display.png",
+      "alt": "UV Index displayed on a Vestaboard",
+      "caption": "Example board output using the default template",
+      "primary": true
+    }
+  ],
+  "api_docs": "https://open-meteo.com/en/docs/air-quality-api"
+}
