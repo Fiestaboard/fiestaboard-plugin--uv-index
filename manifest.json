@@ -1,7 +1,7 @@
 {
   "id": "uv_index",
   "name": "UV Index",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Display the current UV index and sun protection advice using Open-Meteo.",
   "author": "FiestaBoard Team",
   "icon": "sun-dim",
@@ -84,5 +84,49 @@
       "primary": true
     }
   ],
-  "api_docs": "https://open-meteo.com/en/docs/air-quality-api"
+  "api_docs": "https://open-meteo.com/en/docs/air-quality-api",
+  "demo": {
+    "name": "UV Index Demo",
+    "device_type": "flagship",
+    "config": {
+      "enabled": true,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "refresh_seconds": 1800
+    },
+    "template": [
+      "UV Index",
+      "",
+      "UV Index: {{uv_index.uv_index}}",
+      "Risk:     {{uv_index.risk_level}}",
+      "",
+      "{{uv_index.protection}}"
+    ],
+    "line_metadata": [
+      {
+        "alignment": "center",
+        "wrap": false
+      },
+      {
+        "alignment": "left",
+        "wrap": false
+      },
+      {
+        "alignment": "left",
+        "wrap": false
+      },
+      {
+        "alignment": "left",
+        "wrap": false
+      },
+      {
+        "alignment": "left",
+        "wrap": false
+      },
+      {
+        "alignment": "center",
+        "wrap": false
+      }
+    ]
+  }
 }
