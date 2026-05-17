@@ -1,7 +1,7 @@
 {
   "id": "uv_index",
   "name": "UV Index",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Display the current UV index and sun protection advice using Open-Meteo.",
   "author": "FiestaBoard Team",
   "icon": "sun-dim",
