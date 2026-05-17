@@ -1,7 +1,7 @@
 {
   "id": "uv_index",
   "name": "UV Index",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Display the current UV index and sun protection advice using Open-Meteo.",
   "author": "FiestaBoard Team",
   "icon": "sun-dim",
@@ -86,47 +86,70 @@
   ],
   "api_docs": "https://open-meteo.com/en/docs/air-quality-api",
   "demo": {
-    "name": "UV Index Demo",
-    "device_type": "flagship",
-    "config": {
-      "enabled": true,
-      "latitude": 40.7128,
-      "longitude": -74.006,
-      "refresh_seconds": 1800
+    "flagship": {
+      "name": "UV Index Demo",
+      "config": {
+        "enabled": true,
+        "latitude": 40.7128,
+        "longitude": -74.006,
+        "refresh_seconds": 1800
+      },
+      "template": [
+        "UV Index",
+        "",
+        "UV Index: {{uv_index.uv_index}}",
+        "Risk:     {{uv_index.risk_level}}",
+        "",
+        "{{uv_index.protection}}"
+      ],
+      "line_metadata": [
+        {
+          "alignment": "center",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "center",
+          "wrap": false
+        }
+      ]
     },
-    "template": [
-      "UV Index",
-      "",
-      "UV Index: {{uv_index.uv_index}}",
-      "Risk:     {{uv_index.risk_level}}",
-      "",
-      "{{uv_index.protection}}"
-    ],
-    "line_metadata": [
-      {
-        "alignment": "center",
-        "wrap": false
-      },
-      {
-        "alignment": "left",
-        "wrap": false
-      },
-      {
-        "alignment": "left",
-        "wrap": false
-      },
-      {
-        "alignment": "left",
-        "wrap": false
-      },
-      {
-        "alignment": "left",
-        "wrap": false
-      },
-      {
-        "alignment": "center",
-        "wrap": false
-      }
-    ]
+    "note": {
+      "name": "UV Index (Note)",
+      "template": [
+        "UV INDEX",
+        "UV {{uv_index.uv_index}}",
+        "{{uv_index.risk_level}}"
+      ],
+      "line_metadata": [
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        }
+      ]
+    }
   }
 }
