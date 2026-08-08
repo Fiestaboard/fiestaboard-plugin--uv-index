@@ -84,6 +84,28 @@
       "primary": true
     }
   ],
+  "teaser": "UV 7.2 HIGH",
+  "previews": [
+    {
+      "device_type": "flagship",
+      "rows": [
+        "       UV Index",
+        "",
+        "UV Index: 7.2",
+        "Risk:     High",
+        "",
+        " SPF 30+, seek shade"
+      ]
+    },
+    {
+      "device_type": "note",
+      "rows": [
+        "UV INDEX",
+        "UV 7.2",
+        "High"
+      ]
+    }
+  ],
   "api_docs": "https://open-meteo.com/en/docs/air-quality-api",
   "demo": {
     "flagship": {
